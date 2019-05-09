@@ -20,7 +20,7 @@ import tensorflow as tf
 from fr_utils import *
 from inception_blocks_v2 import *
 import os
-
+from keras.models import load_model
 
 def triplet_loss(y_true, y_pred, alpha = 0.2):
     
@@ -33,12 +33,13 @@ def triplet_loss(y_true, y_pred, alpha = 0.2):
     
     return loss
 
-print("Loading Model")
+
+print("Loading Facial Recognition Model")
 FRmodel = faceRecoModel(input_shape=(3, 96, 96))
 print("Compiling Model ....")
 FRmodel.compile(optimizer = 'adam', loss = triplet_loss, metrics = ['accuracy'])
 print("Loading weights ....")
-load_weights_from_FaceNet(FRmodel)
+FRmodel.load_weights("model_weights/FRmodel.h5")
 print("Loaded weights ....")
 Rqconfidence=0.6
 print("[INFO] loading model...Facedetection model")
@@ -66,11 +67,12 @@ while(True):
 			if confidence < Rqconfidence:
 				continue
 			box1 = detections[0, 0, i, 3:7] * np.array([w, h, w, h])
-			scale=[-30,-80,30,30]
+			scale=[-30, -80,30,30]
 			boxfloat=box1+scale
 			box=boxfloat.astype(int)
 			(startX, startY, endX, endY) = box.astype("int")
 			im2=frame[box[1]:box[3],box[0]:box[2]]
+
 		if(cv2.waitKey(1) & 0xFF == ord('q')):
 			if(im2.size!=0):
 				resized=cv2.resize(im2,(96,96))
@@ -106,7 +108,7 @@ while(True):
 		with open('StudentDatabase.txt', 'wb') as dict_items_save:
 			pickle.dump(BDICT, dict_items_save)
 			print('Student successfully saved')
-	contin=input("Enter 1 to stop new student and 2 to continue ")
+	contin=input("Enter 1 to stop new student 2 to continue ")
 	if(contin=='1'):
 		break
 	else:
