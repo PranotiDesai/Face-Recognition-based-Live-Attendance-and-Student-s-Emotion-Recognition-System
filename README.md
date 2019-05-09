@@ -29,5 +29,15 @@
 
 * Press Q to quit
 
+**Output : ** <br>
+![angry shail](https://user-images.githubusercontent.com/43567199/57424827-0d895980-71e7-11e9-8d7e-12c00b92fc9b.PNG) 
+![happy pd](https://user-images.githubusercontent.com/43567199/57424828-0d895980-71e7-11e9-86bf-dc3fff539d84.PNG)
+![multi better](https://user-images.githubusercontent.com/43567199/57424829-0d895980-71e7-11e9-9a8b-b646b59eacd5.PNG)
+![sad pd](https://user-images.githubusercontent.com/43567199/57424831-0e21f000-71e7-11e9-8cbb-322d9ccf44f7.PNG)
+![sha](https://user-images.githubusercontent.com/43567199/57424832-0e21f000-71e7-11e9-925b-8bbb86ee06e6.PNG)
+
+
+
+
 
 
