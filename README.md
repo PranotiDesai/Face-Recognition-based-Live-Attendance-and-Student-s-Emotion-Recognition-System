@@ -29,7 +29,7 @@
 
 * Press Q to quit
 
-**Results : **
+**Results :**
 ![Picture1](https://user-images.githubusercontent.com/43567199/57425553-9608f980-71e9-11e9-97c2-6191b6f9e398.png)
 
 
